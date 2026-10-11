@@ -1,0 +1,683 @@
+
+:root {
+    --fondo: #050714;
+    --panel: rgba(15, 20, 43, 0.82);
+    --texto: #f3f2ff;
+    --suave: #a9b0cb;
+    --rosa: #f6a8e5;
+    --violeta: #b9a0ff;
+    --borde: rgba(190, 177, 255, 0.17);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+    scroll-padding-top: 24px;
+}
+
+body {
+    min-height: 100vh;
+    background: var(--fondo);
+    color: var(--texto);
+    font-family: Arial, Helvetica, sans-serif;
+    overflow-x: hidden;
+    -webkit-tap-highlight-color: transparent;
+}
+
+button, a {
+    font: inherit;
+}
+
+button {
+    color: inherit;
+}
+
+a {
+    -webkit-tap-highlight-color: transparent;
+}
+
+.espacio {
+    position: fixed;
+    inset: 0;
+    overflow: hidden;
+    pointer-events: none;
+    z-index: -2;
+    background:
+        radial-gradient(ellipse at 20% 15%, #30205b66, transparent 45%),
+        radial-gradient(ellipse at 85% 65%, #173d6b44, transparent 40%),
+        #050714;
+}
+
+.estrellas {
+    position: absolute;
+    inset: -50%;
+    background-image:
+        radial-gradient(1px 1px at 20px 30px, white 99%, transparent),
+        radial-gradient(1px 1px at 90px 110px, #b9caff 99%, transparent),
+        radial-gradient(2px 2px at 170px 60px, #f6a8e5 99%, transparent);
+    background-size: 200px 180px, 260px 240px, 320px 300px;
+    animation: moverEstrellas 80s linear infinite;
+}
+
+@keyframes moverEstrellas {
+    to {
+        transform: translate3d(100px, 160px, 0);
+    }
+}
+
+.nebulosa {
+    position: absolute;
+    width: 70vw;
+    height: 70vw;
+    border-radius: 50%;
+    filter: blur(80px);
+    opacity: 0.13;
+}
+
+.nebulosa-1 {
+    top: 10%;
+    left: -35%;
+    background: #8b5cf6;
+}
+
+.nebulosa-2 {
+    top: 55%;
+    right: -35%;
+    background: #ec4899;
+}
+
+.portada {
+    min-height: 100svh;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 70px 24px 50px;
+    text-align: center;
+}
+
+.marca,
+.sobretitulo,
+.indicador,
+.numero-planeta,
+.footer-final {
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 2.5px;
+}
+
+.marca {
+    color: var(--rosa);
+    margin-bottom: 25px;
+}
+
+.marca-icono {
+    margin-right: 7px;
+    color: var(--violeta);
+}
+
+.portada h1 {
+    font-size: clamp(37px, 10vw, 66px);
+    line-height: 1.1;
+    letter-spacing: -2px;
+    font-weight: 700;
+    background: linear-gradient(110deg, #fff, #f5c4f0, #b8b6ff);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    margin-bottom: 22px;
+}
+
+.subtitulo {
+    max-width: 330px;
+    font-size: 15px;
+    color: var(--suave);
+    line-height: 1.9;
+    margin-bottom: 32px;
+}
+
+.boton-principal {
+    display: inline-flex;
+    align-items: center;
+    gap: 18px;
+    padding: 15px 21px;
+    border-radius: 40px;
+    border: 1px solid #d6b4ff55;
+    background: linear-gradient(120deg, #a78bfa22, #f6a8e51c);
+    color: white;
+    text-decoration: none;
+    font-size: 13px;
+    transition: 0.3s;
+}
+
+.boton-principal:active {
+    transform: scale(0.97);
+}
+
+.boton-principal span {
+    color: var(--rosa);
+}
+
+.indicador {
+    margin-top: 65px;
+    color: #8b92b0;
+    font-size: 9px;
+    letter-spacing: 1.8px;
+}
+
+.indicador-punto,
+.leyenda-punto {
+    display: inline-block;
+    width: 6px;
+    height: 6px;
+    margin-right: 8px;
+    border-radius: 50%;
+    background: #a8f0cf;
+    box-shadow: 0 0 10px #a8f0cf;
+}
+
+.encabezado-seccion {
+    padding: 65px 24px 35px;
+    max-width: 620px;
+    margin: auto;
+    text-align: center;
+}
+
+.sobretitulo {
+    color: var(--violeta);
+    line-height: 1.8;
+    font-size: 9px;
+}
+
+.encabezado-seccion h2,
+.titulo-catalogo h2,
+.galeria h2,
+.carta h2 {
+    margin: 15px 0;
+    font-size: clamp(27px, 7vw, 40px);
+    line-height: 1.25;
+    letter-spacing: -0.8px;
+}
+
+.encabezado-seccion > p:last-child,
+.introduccion,
+.texto-galeria {
+    color: var(--suave);
+    font-size: 13px;
+    line-height: 1.9;
+}
+
+.escena-solar {
+    padding: 15px 0 45px;
+    overflow: hidden;
+    text-align: center;
+}
+
+.leyenda {
+    margin: 0 auto 25px;
+    color: #b9bfd8;
+    font-size: 9px;
+    letter-spacing: 2px;
+}
+
+.sistema-solar {
+    position: relative;
+    width: min(94vw, 440px);
+    aspect-ratio: 1;
+    margin: 0 auto;
+    border-radius: 50%;
+    isolation: isolate;
+}
+
+.sistema-solar::before {
+    content: "";
+    position: absolute;
+    inset: 20%;
+    border-radius: 50%;
+    background: #7457c51b;
+    filter: blur(30px);
+}
+
+.orbita {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    border: 1px solid rgba(174, 181, 225, 0.19);
+    border-radius: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.orbita-mercurio {
+    width: 15%;
+    height: 15%;
+    border-color: transparent;
+}
+
+.orbita-1 { width: 22%; height: 22%; }
+.orbita-2 { width: 31%; height: 31%; }
+.orbita-3 { width: 40%; height: 40%; }
+.orbita-4 { width: 49%; height: 49%; }
+.orbita-5 { width: 62%; height: 62%; }
+.orbita-6 { width: 75%; height: 75%; }
+.orbita-7 { width: 88%; height: 88%; }
+.orbita-8 { width: 100%; height: 100%; }
+
+.planeta-en-orbita {
+    position: absolute;
+    top: 50%;
+    left: 100%;
+    width: 0;
+    height: 0;
+    display: block;
+    border: 0;
+    background: transparent;
+    transform: translate(-50%, -50%);
+    cursor: pointer;
+}
+
+.planeta {
+    position: absolute;
+    top: 0;
+    left: 0;
+    display: block;
+    width: clamp(8px, 2.6vw, 13px);
+    height: clamp(8px, 2.6vw, 13px);
+    border-radius: 50%;
+    transform: translate(-50%, -50%);
+    box-shadow: 0 0 9px #ffffff3a;
+}
+
+.sol {
+    width: clamp(35px, 10vw, 49px);
+    height: clamp(35px, 10vw, 49px);
+    background: radial-gradient(circle at 32% 28%, #fff8cb, #ffcb69 42%, #fb793b 75%, #c63764);
+    box-shadow: 0 0 20px #ffb45b9c, 0 0 55px #ff9c4a44;
+}
+
+.mercurio {
+    background: radial-gradient(circle at 30% 25%, #e4ddd5, #958c8a 50%, #514d5a);
+}
+
+.venus {
+    background: radial-gradient(circle at 30% 25%, #ffe2a6, #df9b5e 48%, #97503e);
+}
+
+.tierra {
+    background:
+        radial-gradient(ellipse at 60% 35%, #68c98b 0 18%, transparent 19%),
+        radial-gradient(ellipse at 32% 65%, #4bbd82 0 15%, transparent 16%),
+        radial-gradient(circle at 30% 25%, #9be7ff, #2780d6 60%, #153d8e);
+    box-shadow: 0 0 12px #46a9ff66;
+}
+
+.marte {
+    background: radial-gradient(circle at 30% 25%, #ffb18c, #d65d42 55%, #81342f);
+}
+
+.jupiter {
+    background: repeating-linear-gradient(
+        0deg,
+        #dcb998 0 3px,
+        #a56e52 4px 6px,
+        #edcfaa 7px 10px
+    );
+    width: clamp(16px, 4.5vw, 23px);
+    height: clamp(16px, 4.5vw, 23px);
+}
+
+.saturno {
+    background: repeating-linear-gradient(
+        0deg,
+        #e9d6a8 0 3px,
+        #bd9969 4px 6px,
+        #f3e4c3 7px 9px
+    );
+    width: clamp(13px, 3.6vw, 19px);
+    height: clamp(13px, 3.6vw, 19px);
+}
+
+.anillo {
+    position: absolute;
+    width: 190%;
+    height: 65%;
+    top: 50%;
+    left: 50%;
+    border: 2px solid #e3c69bb3;
+    border-radius: 50%;
+    transform: translate(-50%, -50%) rotate(-25deg);
+}
+
+.urano {
+    background: radial-gradient(circle at 30% 25%, #d4ffff, #6dd6dc 60%, #33899f);
+}
+
+.neptuno {
+    background: radial-gradient(circle at 30% 25%, #8dbbff, #3764db 60%, #172a83);
+    box-shadow: 0 0 10px #5786ff66;
+}
+
+.nota-solar {
+    padding: 0 15px;
+    color: #727b9d;
+    font-size: 10px;
+}
+
+.planetas-seccion {
+    padding: 65px 20px;
+    border-top: 1px solid #ffffff0d;
+    border-bottom: 1px solid #ffffff0d;
+}
+
+.titulo-catalogo {
+    text-align: center;
+    margin: 0 auto 32px;
+}
+
+.titulo-catalogo h2 {
+    font-size: clamp(26px, 7vw, 35px);
+}
+
+.introduccion {
+    max-width: 380px;
+    margin: 0 auto;
+}
+
+.rejilla-planetas {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 12px;
+    max-width: 720px;
+    margin: 35px auto 0;
+}
+
+.tarjeta-planeta {
+    position: relative;
+    padding: 22px 14px 18px;
+    min-width: 0;
+    min-height: 225px;
+    border: 1px solid var(--borde);
+    border-radius: 17px;
+    background: linear-gradient(145deg, #171c36d9, #0c1024d9);
+    text-align: left;
+    transition: border-color 0.3s, transform 0.3s;
+}
+
+.tarjeta-planeta:active {
+    transform: scale(0.98);
+}
+
+.numero-planeta {
+    display: block;
+    color: #8e96b8;
+    font-size: 8px;
+    letter-spacing: 1.2px;
+}
+
+.mini-planeta {
+    position: relative;
+    width: 35px;
+    height: 35px;
+    margin: 22px 0 17px;
+    border-radius: 50%;
+    box-shadow: inset -7px -5px 12px #0005, 0 0 15px #ffffff0c;
+}
+
+.mini-planeta.jupiter {
+    width: 38px;
+    height: 38px;
+}
+
+.mini-planeta.saturno {
+    width: 33px;
+    height: 33px;
+}
+
+.tarjeta-planeta h3 {
+    font-size: 18px;
+    margin-bottom: 9px;
+    color: #f7e9ff;
+}
+
+.tarjeta-planeta > p {
+    min-height: 58px;
+    color: #b3bad2;
+    font-size: 11px;
+    line-height: 1.7;
+}
+
+.boton-mensaje {
+    margin-top: 14px;
+    padding: 8px 0;
+    border: 0;
+    background: transparent;
+    color: var(--rosa);
+    font-size: 11px;
+    cursor: pointer;
+}
+
+.panel-mensaje {
+    max-width: 500px;
+    width: calc(100% - 36px);
+    margin: 65px auto;
+    padding: 34px 23px;
+    border: 1px solid #d3a5ff35;
+    border-radius: 22px;
+    background: linear-gradient(140deg, #1a1837e8, #100f25e8);
+    text-align: center;
+    scroll-margin-top: 30px;
+}
+
+.icono-corazon {
+    display: block;
+    margin-bottom: 15px;
+    color: var(--rosa);
+    font-size: 35px;
+}
+
+.panel-mensaje h2 {
+    margin: 15px 0;
+    font-size: 25px;
+}
+
+.panel-mensaje > p:not(.sobretitulo) {
+    color: #c6c9df;
+    font-size: 13px;
+    line-height: 1.9;
+}
+
+.boton-secundario {
+    margin-top: 22px;
+    padding: 12px 18px;
+    border: 1px solid #c4b5fd55;
+    border-radius: 30px;
+    background: #a78bfa12;
+    color: #e4d8ff;
+    font-size: 11px;
+    cursor: pointer;
+}
+
+.galeria {
+    padding: 50px 20px 70px;
+    text-align: center;
+}
+
+.galeria h2 {
+    font-size: clamp(25px, 7vw, 34px);
+}
+
+.texto-galeria {
+    max-width: 350px;
+    margin: 0 auto;
+}
+
+.fotos {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 14px;
+    max-width: 500px;
+    margin: 32px auto 0;
+}
+
+.foto-marco {
+    padding: 8px;
+    border: 1px solid var(--borde);
+    border-radius: 15px;
+    background: #14182ed9;
+    text-align: left;
+    overflow: hidden;
+}
+
+.foto-marco:last-child {
+    grid-column: 1 / -1;
+    width: 70%;
+    justify-self: center;
+}
+
+.foto-marco img {
+    display: block;
+    width: 100%;
+    aspect-ratio: 4 / 5;
+    object-fit: cover;
+    border-radius: 9px;
+    background: #222641;
+}
+
+.foto-marco figcaption {
+    padding: 12px 3px 5px;
+    color: #e6d6f5;
+    font-size: 11px;
+}
+
+.carta {
+    position: relative;
+    width: calc(100% - 36px);
+    max-width: 600px;
+    margin: 0 auto 75px;
+    padding: 35px 24px;
+    border: 1px solid #c6a4ff33;
+    border-radius: 22px;
+    background: linear-gradient(145deg, #1b1838f2, #0d1024f2);
+}
+
+.carta h2 {
+    font-size: 29px;
+    text-align: center;
+}
+
+.separador {
+    margin: 20px 0;
+    text-align: center;
+    color: var(--rosa);
+}
+
+.carta > p:not(.sobretitulo) {
+    color: #c8cbe0;
+    font-size: 13px;
+    line-height: 2;
+    margin: 19px 0;
+}
+
+.firma {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    margin-top: 30px;
+    color: var(--suave);
+    font-size: 12px;
+}
+
+.firma strong {
+    color: var(--rosa);
+    font-size: 20px;
+}
+
+footer {
+    padding: 30px 20px 40px;
+    border-top: 1px solid #ffffff10;
+    text-align: center;
+    color: #9299b4;
+    font-size: 11px;
+    line-height: 2;
+}
+
+.footer-icono {
+    color: var(--violeta);
+    font-size: 25px;
+    margin-bottom: 10px;
+}
+
+.footer-final {
+    margin-top: 8px;
+    font-size: 8px;
+}
+
+.volver-arriba {
+    display: inline-block;
+    margin-top: 20px;
+    color: var(--rosa);
+    text-decoration: none;
+}
+
+@media (min-width: 700px) {
+    .portada {
+        min-height: 100vh;
+    }
+
+    .rejilla-planetas {
+        grid-template-columns: repeat(4, minmax(0, 1fr));
+    }
+
+    .fotos {
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+    }
+
+    .foto-marco:last-child {
+        grid-column: auto;
+        width: 100%;
+    }
+
+    .sistema-solar {
+        width: min(80vw, 600px);
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        scroll-behavior: auto !important;
+    }
+}
+
+
+
+
+/* ===== SISTEMA SOLAR 3D INTERACTIVO ===== */
+.sistema-solar#sistemaSolar3D {
+    position: relative;
+    width: min(96vw, 650px);
+    height: min(96vw, 650px);
+    min-height: 0;
+    aspect-ratio: auto;
+    margin: 0 auto;
+    overflow: hidden;
+    border-radius: 50%;
+    isolation: isolate;
+    background: radial-gradient(circle at 50% 45%, #171638 0%, #090b20 65%, #03040d 100%);
+    touch-action: manipulation;
+    cursor: grab;
+    box-shadow: 0 0 45px rgba(93, 77, 200, .16), inset 0 0 35px rgba(0, 0, 0, .4);
+}
+.sistema-solar#sistemaSolar3D::before { display: none; content: none; }
+#sistemaSolar3D canvas { display: block; width: 100%; height: 100%; outline: none; }
+@media (max-width: 480px) {
+    .sistema-solar#sistemaSolar3D { width: 96vw; height: 96vw; max-height: 520px; max-width: 520px; }
+}
